@@ -1,6 +1,6 @@
 {
   "name": "atv-backend-express-iv1",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "atividade para fazer backend com express, node e mongo",
   "main": "api/index.js",
   "type": "module",
