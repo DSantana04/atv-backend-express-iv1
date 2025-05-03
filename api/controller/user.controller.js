@@ -4,17 +4,18 @@ import User from '../models/User.js';
 const register = async (req, res) => {
     console.log("Registering user:", req.body);
 
-    if (!req.body || !req.body.username || !req.body.password) {
+    if (!req.body || !req.body.username || !req.body.password || !req.body.email) {
         return res.status(400).json({ message: 'Username and password are required!' });
     }
 
-    const { username, password } = req.body;
+    const { username, password, email } = req.body;
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
     try {
         const savedUser = await User.create({
             username,
+            email,
             password: hashedPassword
         });
         console.log('Saved user:', savedUser);
