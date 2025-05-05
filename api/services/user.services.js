@@ -20,6 +20,15 @@ const registerUser = async ({ username, email, password }) => {
         throw new Error('Invalid email format!');
     } 
 
+    const isValidPassword = (password) => {
+        // Exemplo: mínimo 8 caracteres, pelo menos 1 letra e 1 número
+        return /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password);
+    };
+    
+    if (!isValidPassword(password)) {
+        throw new Error('Password must be at least 8 characters long and include at least one letter and one number.');
+    }
+
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
@@ -31,8 +40,16 @@ const registerUser = async ({ username, email, password }) => {
 };
 
 const loginUser = async ({ username, password }) => {
-    const user = await User.findOne({ username }).select('+password');
+    const user = await User.findOne({ username }).select('+password email');
     if (!user) throw new Error('User not found!');
+
+    if (!user) {
+        throw new Error('User not found!');
+    }
+
+    if (user.email !== email) {
+        throw new Error('Email does not match the registered user!');
+    }
 
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) throw new Error('Invalid credentials!');
