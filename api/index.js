@@ -6,6 +6,9 @@ import exampleRoute from './routes/example.route.js';
 import userRoute from './routes/user.route.js';
 
 dotenv.config();
+
+console.log(process.env.JWT_SECRET)
+
 db.connect();
 const app = express();
 
