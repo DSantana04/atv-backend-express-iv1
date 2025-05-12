@@ -2,10 +2,10 @@
   "name": "atv-backend-express-iv1",
   "version": "0.5.0",
   "description": "atividade para fazer backend com express, node e mongo",
-  "main": "src/index.js",
+  "main": "api/index.js",
   "type": "module",
   "scripts": {
-    "inic": "nodemon src/index.js",
+    "inic": "nodemon api/index.js",
     "inic:db": "docker compose up -d",
     "stop:db": "docker compose down",
     "generate-secret-key": "node -e \"console.log(require('crypto').randomBytes(32).toString('hex'))\""

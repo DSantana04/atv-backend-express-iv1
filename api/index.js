@@ -25,3 +25,4 @@ app.listen(PORT, () => {
     console.log(`Servidor está rodando na porta http://localhost:${PORT}/`);
 });
 
+export default app;
