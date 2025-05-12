@@ -1,0 +1,2 @@
+curl -X DELETE http://localhost:3000/workout/68215eee135b8739326e4d9f \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjE1YmQ4MTM1Yjg3MzkyMjZlNGQ5NSIsImVtYWlsIjoiYW5vdGhlcmVtYWlsZXhhbXBsZUBnbWFpbC5jb20iLCJpYXQiOjE3NDcwMTcwNjQsImV4cCI6MTc0NzAyMDY2NH0.c9WJJ56BxB5t2sMHo7f0UkHygkDLijOw4RMQa4qCtAY"
