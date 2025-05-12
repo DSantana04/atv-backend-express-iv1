@@ -8,7 +8,7 @@ import {
   deleteWorkoutHandler
 } from '../controller/workout.controller.js';
 
-import { verifyToken } from '../middleware/jwt.token.middleware.js';
+import verifyToken from '../middleware/jwt.token.middleware.js';
 
 const router = express.Router();
 
